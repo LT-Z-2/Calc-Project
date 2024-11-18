@@ -2,30 +2,29 @@
 #include <cmath>
 
 extern "C" {
-    // asm func declarations
-    float add(float a, float b);
-    float subtract(float a, float b);
-    float multiply(float a, float b);
-    float divide(float a, float b);
+    float _add(float a, float b);
+    float _subtract(float a, float b);
+    float _multiply(float a, float b);
+    float _divide(float a, float b);
 }
 
 float add_wrapper(float a, float b) {
-    return add(a, b); // using asm func
+    return _add(a, b);
 }
 
 float subtract_wrapper(float a, float b) {
-    return subtract(a, b);
+    return _subtract(a, b);
 }
 
 float multiply_wrapper(float a, float b) {
-    return multiply(a, b);
+    return _multiply(a, b);
 }
 
 float divide_wrapper(float a, float b) {
     if (b == 0) {
         throw std::runtime_error("Division by zero!");
     }
-    return divide(a, b);
+    return _divide(a, b);
 }
 
 float c_pow(float a, float b) {
