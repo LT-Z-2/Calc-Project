@@ -10,3 +10,7 @@
     -  `-f win64` (windows), `-f elf64`(linux), `-f macho64`(macos)
 2. `python setup.py build_ext --inplace`
     - within python dir 
+
+
+
+- ALSO CONFIGURE C++ INCLUDE PATH

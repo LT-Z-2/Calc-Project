@@ -40,8 +40,4 @@ dist/
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
-Makefile
 
-# Ignore additional files specific to your project
-src/asm/basiccpu.o  # Precompiled assembly object file
-flagcheck.o         # Temporary C++ build file
