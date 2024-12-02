@@ -1,5 +1,4 @@
 from tkinter import *
-from math import sqrt, pow
 
 root = Tk()
 root.title("Advanced Calculator")
