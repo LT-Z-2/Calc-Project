@@ -12,7 +12,7 @@
 # variables:
 CXX = g++                # C++ compiler
 AS = as                  # assembler
-CXXFLAGS = -O2                # C++ compiler flag for optimization
+CXXFLAGS = -O2           # C++ compiler flag for optimization
 ASFLAGS = -arch arm64    # assembler flags that tell system type
 LDFLAGS = -lm            # linking flags
 SRC_DIR = src

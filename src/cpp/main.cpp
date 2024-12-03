@@ -57,33 +57,33 @@ int main() {
     float a, b;
 
     // Taking input
-    std::cout << "Enter first number: ";
+    //std::cout << "Enter first number: ";
     std::cin >> a;
 
-    std::cout << "Enter operation (+, -, *, /, ^, sqrt): ";
+    //std::cout << "Enter operation (+, -, *, /, ^, sqrt): ";
     std::cin >> op;
 
     // Check if operation is "sqrt"
     if (op == "sqrt") {
-        std::cout << "sqrt(" << a << ") = " << c_sqrt(a) << std::endl;
+        std::cout << c_sqrt(a) << std::endl;
     } else {
-        std::cout << "Enter second number: ";
+        //std::cout << "Enter second number: ";
         std::cin >> b;
 
         if (op == "+") {
-            std::cout << a << " + " << b << " = " << _add(a, b) << std::endl;
+            std::cout << _add(a, b) << std::endl;
         } else if (op == "-") {
-            std::cout << a << " - " << b << " = " << _subtract(a, b) << std::endl;
+            std::cout << _subtract(a, b) << std::endl;
         } else if (op == "*") {
-            std::cout << a << " * " << b << " = " << _multiply(a, b) << std::endl;
+            std::cout << _multiply(a, b) << std::endl;
         } else if (op == "/") {
             if (b == 0) {
                 std::cerr << "Error: Division by zero is not allowed." << std::endl;
             } else {
-                std::cout << a << " / " << b << " = " << _divide(a, b) << std::endl;
+                std::cout << _divide(a, b) << std::endl;
             }
         } else if (op == "^") {
-            std::cout << a << "^" << b << " = " << c_pow(a, b) << std::endl;
+            std::cout << c_pow(a, b) << std::endl;
         } else {
             std::cerr << "Error: Invalid operation." << std::endl;
         }

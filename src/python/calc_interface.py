@@ -1,7 +1,12 @@
 from tkinter import *
+import subprocess
 
 root = Tk()
-root.title("Advanced Calculator")
+root.title("Calculator")
+
+#subprocess setup
+executable = './build/calculator'
+
 
 e = Entry(root, width=50, borderwidth=5, fg="teal")
 e.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
@@ -25,22 +30,29 @@ def button_operation(op):
 def button_equal():
     second_num = float(e.get())
     e.delete(0, END)
-
+    
+    # calculations
     if operation == "+":
-        e.insert(0, first_num + second_num)
+        input_data = f'{first_num}\n+\n{second_num}'
+        e.insert(0, subprocess.run(executable, input=input_data, text=True, shell=False, capture_output=True).stdout)
     elif operation == "-":
-        e.insert(0, first_num - second_num)
+        input_data = f'{first_num}\n-\n{second_num}'
+        e.insert(0, subprocess.run(executable, input=input_data, text=True, shell=False, capture_output=True).stdout)
     elif operation == "*":
-        e.insert(0, first_num * second_num)
+        input_data = f'{first_num}\n*\n{second_num}'
+        e.insert(0, subprocess.run(executable, input=input_data, text=True, shell=False, capture_output=True).stdout)
     elif operation == "/":
         if second_num != 0:
-            e.insert(0, first_num / second_num)
+            input_data = f'{first_num}\n/\n{second_num}'
+            e.insert(0, subprocess.run(executable, input=input_data, text=True, shell=False, capture_output=True).stdout)
         else:
             e.insert(0, "Error (Divide by 0)")
     elif operation == "^":
-        e.insert(0, pow(first_num, second_num))
+        input_data = f'{first_num}\n^\n{second_num}'
+        e.insert(0, subprocess.run(executable, input=input_data, text=True, shell=False, capture_output=True).stdout)
     elif operation == "sqrt":
-        e.insert(0, sqrt(first_num))
+        input_data = f'{first_num}\nsqrt'
+        e.insert(0, subprocess.run(executable, input=input_data, text=True, shell=False, capture_output=True).stdout)
 
 def button_sqrt():
     global first_num
